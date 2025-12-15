@@ -1,5 +1,6 @@
 package org.logesh.controller;
 
+import org.logesh.entity.Seller;
 import org.logesh.service.SellerService;
 
 public class SellerController {
@@ -8,6 +9,10 @@ public class SellerController {
 
     public SellerController(SellerService sellerService) {
         this.sellerService = sellerService;
+    }
+
+    public Seller createSeller(String userName) {
+        return this.sellerService.createSeller(userName);
     }
 
 }

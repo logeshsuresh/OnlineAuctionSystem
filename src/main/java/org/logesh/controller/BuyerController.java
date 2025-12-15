@@ -1,5 +1,6 @@
 package org.logesh.controller;
 
+import org.logesh.entity.Buyer;
 import org.logesh.service.BuyerService;
 
 public class BuyerController {
@@ -10,5 +11,8 @@ public class BuyerController {
         this.buyerService = buyerService;
     }
 
+    public Buyer createBuyer(String userName) {
+        return this.buyerService.createBuyer(userName);
+    }
 
 }
