@@ -15,6 +15,10 @@ public class BidController {
         return this.bidService.createBid(auctionId, buyerId, amount);
     }
 
+    public void updateBid(String auctionId, String buyerId, String bidId, double newBidAmount) {
+        this.bidService.updateBid(auctionId, buyerId, bidId, newBidAmount);
+    }
+
     public void withdrawBid(String bidId) {
         this.bidService.withdraw(bidId);
     }

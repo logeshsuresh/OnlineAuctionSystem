@@ -38,6 +38,15 @@ public class BidServiceImpl implements BidService {
     }
 
     @Override
+    public void updateBid(String auctionId, String buyerId, String bidId, double newBidAmount) {
+        Bid bid = this.findById(bidId);
+        this.withdraw(bid.getBidId());
+        Bid newBid = this.createBid(auctionId, buyerId, newBidAmount);
+        newBid.setBidId(bid.getBidId());
+        this.rankerService.rank(newBid.getAuction().getAuctionId(), newBid);
+    }
+
+    @Override
     public void withdraw(String bidId) {
         Bid bid = this.findById(bidId);
         this.rankerService.derank(bid);

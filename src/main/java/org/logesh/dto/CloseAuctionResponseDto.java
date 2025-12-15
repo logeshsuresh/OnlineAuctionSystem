@@ -1,9 +1,11 @@
 package org.logesh.dto;
 
 import lombok.Builder;
+import lombok.Data;
 import org.logesh.entity.Bid;
 import org.logesh.entity.Buyer;
 
+@Data
 @Builder
 public class CloseAuctionResponseDto {
 

@@ -7,7 +7,7 @@ import java.util.UUID;
 @Data
 public class Bid {
 
-    private final String bidId;
+    private String bidId;
     private final Auction auction;
     private final Buyer buyer;
     private double amount;
